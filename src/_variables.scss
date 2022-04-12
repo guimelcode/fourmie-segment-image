@@ -1,0 +1,70 @@
+/* Marges */
+
+$grandGauche: 2%;
+
+/* Break points */
+$breakpoints: (xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px);
+
+/* Marges de segment */
+$contentPadding: (baseLeft: 4%,
+	baseRight: 0%,
+	mediumLeft: 2%,
+	mediumRight: 0%,
+	extralargeLeft: 4%,
+	extralargeRight: 2%,
+	doubleextralargeLeft: 5%,
+	doubleextralargeRight: 3%,
+	superlargeLeft: 10%,
+	superlargeRight: 5%,
+);
+
+$fontSize: 17;
+$inter-capHeight: 1.05;
+
+$lineHeight: 24;
+$inter-lineHeightComputed: ($lineHeight * $inter-capHeight);
+
+$typoMod: (titre-1: 4,
+	titre-2: 3,
+	titre-3: 2,
+	titre-4: 1.75,
+	texte-1: .9,
+	texte-2: 1,
+	wideScreen: 1.15,
+);
+
+
+@mixin manageWidthContent {
+	width: calc(100% - #{map-get($contentPadding, baseLeft)} - #{map-get($contentPadding, baseRight)});
+	padding-left: map-get($contentPadding, baseLeft);
+	padding-right: map-get($contentPadding, baseRight);
+
+	@media (min-width: map-get($breakpoints, md)) {
+		width: calc(100% - #{map-get($contentPadding, mediumLeft)} - #{map-get($contentPadding, mediumRight)});
+		padding-left: map-get($contentPadding, mediumLeft);
+		padding-right: map-get($contentPadding, mediumRight);
+	}
+
+	@media (min-width: map-get($breakpoints, xl)) {
+		width: calc(100% - #{map-get($contentPadding, extralargeLeft)} - #{map-get($contentPadding, extralargeRight)});
+		padding-left: map-get($contentPadding, extralargeLeft);
+		padding-right: map-get($contentPadding, extralargeRight);
+	}
+
+	@media (min-width: map-get($breakpoints, xxl)) {
+		width: calc(100% - #{map-get($contentPadding, doubleextralargeLeft)} - #{map-get($contentPadding, doubleextralargeRight)});
+		padding-left: map-get($contentPadding, doubleextralargeLeft);
+		padding-right: map-get($contentPadding, doubleextralargeRight);
+	}
+
+	@media (min-width: "2100px") {
+		width: calc(100% - #{map-get($contentPadding, superlargeLeft)} - #{map-get($contentPadding, superlargeRight)});
+		padding-left: map-get($contentPadding, superlargeLeft);
+		padding-right: map-get($contentPadding, superlargeRight);
+	}
+}

@@ -1,0 +1,91 @@
+@import './variables';
+
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+
+.wp-block-fourmi-e-segment-image {
+	background-color: rgba($color: #000000, $alpha: .25);
+	width: calc(100% - #{$grandGauche});
+	padding-left: $grandGauche;
+	position: relative;
+
+	.image-wrap {
+		margin: 0 0 0 #{-$grandGauche};
+		position: relative;
+		display: block;
+		min-width: 100%;
+
+
+		img {
+			display: block;
+			object-fit: cover;
+			max-width: 100%;
+			width: 100%;
+			margin: 0;
+
+			&.hauteur {
+				&-petite {
+					height: 150px;
+					height: 180px;
+
+					@media (min-width: map-get($breakpoints, md)) {
+						height: 200px;
+						height: 210px;
+					}
+
+					@media (min-width: map-get($breakpoints, xl)) {
+						height: 250px;
+						height: 240px;
+					}
+				}
+
+				&-moyenne {
+					height: 350px;
+					height: 340px;
+
+					@media (min-width: map-get($breakpoints, md)) {
+						height: 400px;
+						height: 380px;
+					}
+
+					@media (min-width: map-get($breakpoints, xl)) {
+						height: 450px;
+						height: 420px;
+					}
+
+				}
+
+				&-grande {
+					height: 550px;
+					height: 480px;
+
+					@media (min-width: map-get($breakpoints, md)) {
+						height: 600px;
+						height: 500px;
+					}
+
+					@media (min-width: map-get($breakpoints, xl)) {
+						height: 650px;
+						height: 600px;
+					}
+				}
+			}
+		}
+	}
+
+	.conteneurs-wrap {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		@include manageWidthContent;
+		display: grid;
+		grid-template-columns: repeat(24, 1fr);
+		gap: 0;
+	}
+}

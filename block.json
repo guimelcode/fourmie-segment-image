@@ -1,0 +1,56 @@
+{
+	"apiVersion": 2,
+	"name": "fourmi-e/segment-image",
+	"version": "0.2.0",
+	"title": "Fourmie Segment Image",
+	"category": "widgets",
+	"icon": "tide",
+	"description": "Segment image est un conteneur de 24 colonnes avec une marge à gauche avec un fond image. Délimite les grandes parties verticales d'une page/article. - la fourmi-e -",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "fourmie-segment-image",
+	"attributes": {
+		"backgroundColor": {
+			"type": "string"
+		},
+		"backgroundColorClass": {
+			"type": "string"
+		},
+		"imgHeightLimit": {
+			"type": "string",
+			"default": "moyenne"
+		},
+		"imgOffsetVerticalPosition": {
+			"type": "number",
+			"default": 50
+		},
+		"imgID": {
+			"type": "number",
+			"default": null
+		},
+		"imgURL": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": "img"
+		},
+		"imgAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": "img"
+		},
+		"imgWidth": {
+			"type": "number",
+			"default": null
+		},
+		"imgHeight": {
+			"type": "number",
+			"default": null
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
